@@ -27,11 +27,18 @@ namespace Part_4___Random_Numbers
         {
             string minInput = txtMin.Text;
             string maxInput = txtMax.Text;           
-            if (!Int32.TryParse(minInput, out minInt))
-                txtMin.Text = "Enter a valid number";
-            else
-                if (!Int32.TryParse(maxInput, out maxInt))
-                txtMax.Text = "Enter a valid number";
+            if (!Int32.TryParse(minInput, out minInt)) { 
+                lblRandomNumber.Text = "Enter a valid integer";
+                txtMax.Text = "";
+                txtMin.Text = "";
+            }
+            else if (!Int32.TryParse(maxInput, out maxInt)) { 
+                lblRandomNumber.Text = "Enter a valid integer";
+                txtMax.Text = "";
+                txtMin.Text = "";
+            }
+            else if (minInt > maxInt)
+                lblRandomNumber.Text = "Minimum must be less than or equal to the maximum.";
             else
                 lblRandomNumber.Text = $"{rand.Next(minInt, maxInt + 1)}";
         }
@@ -41,14 +48,25 @@ namespace Part_4___Random_Numbers
             string minInput = txtMin.Text;
             string maxInput = txtMax.Text;
             decimal roundTo = nudRounding.Value;
-            if (!double.TryParse(minInput, out minDouble))
-                txtMin.Text = "Enter a valid number";
-            else
-                if (!double.TryParse(maxInput, out maxDouble))
-                txtMax.Text = "Enter a valid number";
-            else
+            if (!double.TryParse(minInput, out minDouble)) { 
+                lblRandomNumber.Text = "Enter a valid number";
+                txtMax.Text = "";
+                txtMin.Text = ""; 
+            }
+            else if (!double.TryParse(maxInput, out maxDouble)) { 
+                lblRandomNumber.Text = "Enter a valid number";
+                txtMax.Text = "";
+                txtMin.Text = ""; 
+            }
+            else if (minDouble > maxDouble) { 
+                lblRandomNumber.Text = "Minimum must be less than or equal to the maximum.";
+                txtMax.Text = "";
+                txtMin.Text = ""; 
+            }
+            else { 
                 randNumber = Math.Round(rand.NextDouble() * (maxDouble - minDouble) + minDouble, Convert.ToInt32(roundTo));
                 lblRandomNumber.Text = $"{randNumber}";
+            }
         }
     }
 }

@@ -68,10 +68,10 @@
             this.lblRandomNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRandomNumber.Location = new System.Drawing.Point(12, 171);
             this.lblRandomNumber.Name = "lblRandomNumber";
-            this.lblRandomNumber.Size = new System.Drawing.Size(289, 23);
+            this.lblRandomNumber.Size = new System.Drawing.Size(289, 45);
             this.lblRandomNumber.TabIndex = 2;
             this.lblRandomNumber.Text = "Number Will Appear Here!";
-            this.lblRandomNumber.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblRandomNumber.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // txtMax
             // 
@@ -152,7 +152,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ClientSize = new System.Drawing.Size(312, 200);
+            this.ClientSize = new System.Drawing.Size(312, 218);
             this.Controls.Add(this.lblRounding);
             this.Controls.Add(this.nudRounding);
             this.Controls.Add(this.lblMax);
